@@ -1,0 +1,1 @@
+# docs.yaizu-city.com
