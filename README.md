@@ -116,8 +116,8 @@ myCity.on("load", () => {
 });
 ```
 
-![スクリーンショット 2023-04-05 16 00 56](https://user-images.githubusercontent.com/1124652/230005265-a76886d8-b38e-454a-89fb-461c4fa6560f.png)
-[Codepen で触ってみる](https://codepen.io/geolonia/pen/yLxmwrx)
+![codepen sample program](./assets/img/codepen.png)
+[Codepen で触ってみる](https://codepen.io/sugama-satsuki/pen/wBvRpBo)
 
 ## カスタマイズする
 
