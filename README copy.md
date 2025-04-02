@@ -1,4 +1,4 @@
-[スマートマップ焼津](https://maps.yaizu-smartcity.jp/)、およびデータAPIを使うと、営利・非営利を問わず、地図と位置情報を活用したウェブサイトやアプリケーションを作ることができます。
+[スマートマップ焼津](https://maps.takamatsu-fact.com/)、およびデータAPIを使うと、営利・非営利を問わず、地図と位置情報を活用したウェブサイトやアプリケーションを作ることができます。
 
 ## クイックスタート
 
@@ -11,7 +11,7 @@
 ```
 <div id="map"></div>
 
-<script type="text/javascript" src="https://city.geolonia.com/v1/shizuoka/yaizu/api.js"></script>
+<script type="text/javascript" src="https://city.geolonia.com/v1/kagawa/takamatsu/api.js"></script>
 ```
 
 **CSS**
@@ -29,45 +29,45 @@ html, body, #map
 **Javascript**
 
 ```
-const myCity = new city.Yaizu.Map();
+const myCity = new city.Takamatsu.Map();
 ```
 
 [Codepen で確認する](https://codepen.io/geolonia/pen/abaeMxg)
 
-### 焼津市のデータを表示する
+### 高松市のデータを表示する
 
-焼津市が[スマートマップ焼津](https://maps.yaizu-smartcity.jp/)公開しているデータを、地図上に表示できます。
+高松市が[スマートマップ焼津](https://maps.takamatsu-fact.com/)公開しているデータを、地図上に表示できます。
 
 **都市計画情報を表示する**
 
-`loadData` メソッドを使って、地図上に[スマートマップ焼津](https://maps.yaizu-smartcity.jp/)で公開されているポリゴンデータを表示できます。
+`loadData` メソッドを使って、地図上に[スマートマップ焼津](https://maps.takamatsu-fact.com/)で公開されているポリゴンデータを表示できます。
 
 ```
-const myCity = new city.Yaizu.Map();
+const myCity = new city.Takamatsu.Map();
 
 myCity.on('load', () => {  
   
-  myCity.loadData('防災/内水浸水想定区域(公共下水道区域内)');
+  myCity.loadData("商業地域")
     
 })
 ```
 
-* 第一引数には、スマートマップ焼津に表示されているデータの `id` 文字列を入れてください。
+* 第一引数には、スマートマップ焼津に表示されているデータの `class` 文字列を入れてください。
 
 **施設情報を表示する**
 
-地図上に[スマートマップ焼津](https://maps.yaizu-smartcity.jp/)で公開されているポイントデータを表示できます。
+地図上に[スマートマップ焼津](https://maps.takamatsu-fact.com/)で公開されているポイントデータを表示できます。
 
-まずは、[焼津市オープンデータ一覧](https://github.com/yaizu-city/opendata/) から表示したいデータを選びます。この例では、 `AED設置箇所一覧` を使います。
+まずは、[高松市オープンデータ一覧](https://github.com/takamatsu-city/opendata/#%E9%AB%98%E6%9D%BE%E5%B8%82%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%83%87%E3%83%BC%E3%82%BF) から表示したいデータを選びます。この例では、 `AED設置場所` を使います。
 
-データ名列が「AED設置箇所一覧」の行、「GeoJSON」のリンク先をコピーします。
+データ名列が「AED設置場所(0002)」の行、「GeoJSON」のリンク先をコピーします。
 
 ```
-const myCity = new city.Yaizu.Map();
+const myCity = new city.Takamatsu.Map();
 
 myCity.on('load', () => {
   // まず、GeoJSONデータを読み込みます。
-  fetch("https://opendata.yaizu-fact.com/aed_location/data.geojson")
+  fetch("https://opendata.takamatsu-fact.com/aed_location/data.geojson")
     .then((data) => data.json())
     .then((data) => {
       // GeoJSONのデータを地図に追加します。
@@ -102,22 +102,22 @@ myCity.on('load', () => {
 以下のように地図上に表示している地物（ポリゴンや点）のデータを取得できます。
 
 ```
-const myCity = new city.Yaizu.Map();
+const myCity = new city.Takamatsu.Map();
 
 myCity.on("load", () => {
-  myCity.loadData("ごみ・リサイクル/リサイクル拠点");
+  myCity.loadData("商業地域");
 
   myCity.on("click", (e) => {
     const features = myCity.queryRenderedFeatures(e.point, {
-      layers: ["ごみ・リサイクル/リサイクル拠点"]
+      layers: ["商業地域"]
     });
     console.log(features.map(feature => feature.properties));
   });
 });
 ```
 
-![codepen sample program](./assets/img/codepen.png)
-[Codepen で触ってみる](https://codepen.io/geolonia/pen/bNGOagR)
+![スクリーンショット 2023-04-05 16 00 56](https://user-images.githubusercontent.com/1124652/230005265-a76886d8-b38e-454a-89fb-461c4fa6560f.png)
+[Codepen で触ってみる](https://codepen.io/geolonia/pen/yLxmwrx)
 
 ## カスタマイズする
 
@@ -125,12 +125,12 @@ myCity.on("load", () => {
 
 ## 独自ドメインでホスティングする
 
-スマートマップ焼津を、独自ドメインでホスティングする場合は焼津市にお問い合わせください。
+スマートマップ焼津を、独自ドメインでホスティングする場合は高松市にお問い合わせください。
 
 問い合わせの際には、利用するドメイン名を伝えてください。その後 API キーを発行します。
 API キーを使用して以下のようにスクリプトを読み込むことができます。
 
-`https://city.geolonia.com/v1/shizuoka/yaizu/api.js?api-key=<APIキー>`
+`https://city.geolonia.com/v1/kagawa/takamatsu/api.js?api-key=<APIキー>`
 
 
 ### 開発環境での利用
@@ -153,13 +153,13 @@ API キーを使用して以下のようにスクリプトを読み込むこと�
 * URL は、スキーマも含めて一致する必要があります。たとえば、`http://127.0.0.1:8000` では利用可能ですが、 `https://127.0.0.1:8000` ではスキーマが違う (`http` と `https`) ため利用できません。
 
 
-## 「スマートマップ焼津」と「焼津都市情報API」 について
+## 「スマートマップ焼津」と「高松都市情報API」 について
 
-「スマートマップ焼津」と「焼津都市情報API」 は、焼津市が公開するサービスです。
+「スマートマップ焼津」と「高松都市情報API」 は、高松市が公開するサービスです。
 
-市民、民間企業、学術団体が営利目的、非営利目的を問わず無料で利用し、地図と位置情報を活用したウェブサイトやアプリケーションを作ることができます。焼津市もこの地図とAPIを利用して、市民向けサービスの開発や業務の合理化を進めています。
+市民、民間企業、学術団体が営利目的、非営利目的を問わず無料で利用し、地図と位置情報を活用したウェブサイトやアプリケーションを作ることができます。高松市もこの地図とAPIを利用して、市民向けサービスの開発や業務の合理化を進めています。
 
-この地図で表示・配信されている情報は、国土地理院の「地理院地図」、香川県が公開する「ハザードマップデータ」、OpenStreetMapのデータ等、自由なライセンスで公開された情報をベースに、焼津市が保有している地図、位置情報をオープンデータとして公開しているものです。
+この地図で表示・配信されている情報は、国土地理院の「地理院地図」、香川県が公開する「ハザードマップデータ」、OpenStreetMapのデータ等、自由なライセンスで公開された情報をベースに、高松市が保有している地図、位置情報をオープンデータとして公開しているものです。
 
 現在公開している情報は、都市計画にかかわる情報、市の設備施設情報、防災IoT情報などで、かんたんな記述でみなさんのウェブサイトやアプリの地図上に表示できる他、API
 での取得もできます。利用方法は、「スマートマップ焼津 開発者向けドキュメンテーション」をお読みください。
@@ -169,4 +169,4 @@ API キーを使用して以下のようにスクリプトを読み込むこと�
 本サイトで公開している情報は、地図の精度上誤差を含んでいます。また、地図の利用目的に応じて、表示項目の取捨選択や地図の見やすさ等を考慮した表現を行っています。都市計画情報のうち、都市施設においては、都市計画決定した一部を掲載しているため、詳細については担当課（都市計画課）までお問合せください。
 システムの利用により発生した直接的又は間接的な損失、損害等についてもいかなる責任を負うものではありません。
 
-ご利用にあたっては、「[焼津市オープンデータ利用規約](https://yaizu-smartcity.jp/%E7%84%BC%E6%B4%A5%E3%82%AA%E3%83%BC%E3%83%95%E3%82%9A%E3%83%B3%E3%83%86%E3%82%99%E3%83%BC%E3%82%BF%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%AF%E3%82%99%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%8420250306.pdf)」に同意の上、ご利用ください。
+ご利用にあたっては、「[高松市オープンデータ利用規約](https://opendata.smartcity-takamatsu.jp/odp/tos/)」に同意の上、ご利用ください。

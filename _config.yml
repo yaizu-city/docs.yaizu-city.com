@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+title: スマートマップ焼津 開発者向けドキュメンテーション
+description: 焼津市が公開する地図と都市情報 API を活用したウェブサイトやアプリケーションを作る開発者のためのドキュメンテーションサイト
+google_analytics: G-W7QTRLVH02
+lang: "ja_JP"
