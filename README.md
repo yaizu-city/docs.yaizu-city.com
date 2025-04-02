@@ -117,7 +117,7 @@ myCity.on("load", () => {
 ```
 
 ![codepen sample program](./assets/img/codepen.png)
-[Codepen で触ってみる](https://codepen.io/sugama-satsuki/pen/wBvRpBo)
+[Codepen で触ってみる](https://codepen.io/geolonia/pen/bNGOagR)
 
 ## カスタマイズする
 
