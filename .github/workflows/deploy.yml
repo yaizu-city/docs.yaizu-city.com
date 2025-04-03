@@ -20,12 +20,12 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       # Generate index.md
       - run: cat .index-header.md README.md > index.md
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
@@ -35,12 +35,12 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::584344484091:role/docs-takamatsu-fact-com-github-actions-deploy-v1
+          role-to-assume: arn:aws:iam::302263045312:role/docs-yaizu-city-jp-github-actions-deploy-v1
           aws-region: ap-northeast-1
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./_site s3://docs-takamatsu-fact-com-frontend-v1 \
+          aws s3 sync ./_site s3://docs-yaizu-city-jp-frontend-v1 \
             --delete \
             --cache-control "public,max-age=60" \
 
