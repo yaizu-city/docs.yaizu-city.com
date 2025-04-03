@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
       
       # Generate index.md
-      - run: cat .index-header.md README.md > index.md
+      - run: cat README.md > index.md
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
