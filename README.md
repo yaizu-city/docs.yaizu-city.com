@@ -32,7 +32,7 @@ html, body, #map
 const myCity = new city.Yaizu.Map();
 ```
 
-[Codepen で確認する](https://codepen.io/geolonia/pen/abaeMxg)
+[Codepen で確認する](https://codepen.io/geolonia/pen/bNGOagR)
 
 ### 焼津市のデータを表示する
 
