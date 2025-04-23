@@ -1,11 +1,13 @@
 version: 1
 rules:
-  - expected: "スマートマップ焼津"
+  - expected: "焼津オープンデータカタログ"
     patterns:
       - "スマートマップ焼津(市)?"
+      - "焼津スマートマップ"
   - expected: "焼津都市情報API"
     patterns:
-      - "焼津都市情報API(サービス)?"
+      - "焼津都市情報API"
+      - "焼津焼津都市情報API"
       - "データAPI"
       - "焼津市都市情報API"
       - "焼津市データAPI"
