@@ -1,0 +1,12 @@
+version: 1
+rules:
+  - expected: "スマートマップ焼津"
+    patterns:
+      - "スマートマップ焼津(市)?"
+  - expected: "焼津都市情報API"
+    patterns:
+      - "焼津都市情報API(サービス)?"
+      - "データAPI"
+      - "焼津市都市情報API"
+      - "焼津市データAPI"
+      - "都市情報API"
