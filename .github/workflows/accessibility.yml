@@ -1,0 +1,35 @@
+name: Accessibility Test with Playwright
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-accessibility:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npx playwright install --with-deps
+
+      - name: Run accessibility tests
+        run: node bin/accessibility-check.js
+
+      - name: Upload axe report artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: axe-results
+          path: axe-results.json
+          retention-days: 1
