@@ -134,7 +134,7 @@ myCity.on("load", () => {
 
 - スマートマップ焼津のメニューの ［焼津市データ］以下のデータが表示できます。
 - 背景地図は、スマートマップ焼津の［デフォルト］背景のみ使用できます。
-![image](https://github.com/user-attachments/assets/3685b61a-1c31-4b62-b998-9564045336b6)
+![image](./assets/img/use-data-list.jpg)
 
 
 ## カスタマイズする
