@@ -8,11 +8,9 @@
     display: block;
     font-weight: bold;
 }
-
 .site-footer-credits {
-    color: #819198;
+    color: #606c71;
 }
-
 
 a {
     color: #0079c4;
@@ -95,6 +93,8 @@ a:hover {
 }
 
 .page-header {
+    position: relative;
+    z-index: -1;
     padding: 32px 16px;
     background-color: #015591;
     color: #fff;
@@ -114,6 +114,16 @@ a:hover {
     }
 }
 
+.page-header::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 
 @media (min-width: 768px) {
   .page-header {
