@@ -130,6 +130,13 @@ myCity.on("load", () => {
 ![codepen sample program](./assets/img/codepen.png)
 [Codepen で触ってみる](https://codepen.io/geolonia/pen/bNGOagR)
 
+### 対応データ
+
+- スマートマップ焼津のメニューの ［焼津市データ］セクション内のデータが表示できます。
+- 背景地図は、スマートマップ焼津の［デフォルト］背景のみ使用できます。
+![image](./assets/img/use-data-list.jpg)
+
+
 ## カスタマイズする
 
 スマートマップ焼津は、Maplibre, Geolonia Maps と互換性があります。詳しいカスタマイズの方法は、[Intro - MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/API/) を参照してください。
