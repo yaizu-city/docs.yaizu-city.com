@@ -8,6 +8,9 @@
     display: block;
     font-weight: bold;
 }
+.site-footer-credits {
+    color: #606c71;
+}
 
 a {
     color: #0079c4;
@@ -113,7 +116,7 @@ a:hover {
 
 .page-header::before {
     content: "";
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     height: 100%;
     width: 100%;
