@@ -69,7 +69,7 @@ myCity.on('load', () => {
 
 地図上に[スマートマップ焼津](https://maps.yaizu-smartcity.jp/)で公開されているポイントデータを表示できます。
 
-まずは、[焼津市オープンデータ一覧](https://github.com/yaizu-city/opendata/) から表示したいデータを選びます。この例では、 `AED設置箇所一覧` を使います。
+まずは、[焼津市オープンデータ一覧](https://github.com/yaizu-city/opendata#yaizu-open-data) から表示したいデータを選びます。この例では、 `AED設置箇所一覧` を使います。
 
 データ名列が「AED設置箇所一覧」の行、「GeoJSON」のリンク先をコピーします。
 
