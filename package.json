@@ -2,5 +2,11 @@
   "devDependencies": {
     "textlint": "^14.6.0",
     "textlint-rule-prh": "^6.1.0"
+  },
+  "dependencies": {
+    "markdown-link-check": "^3.13.7"
+  },
+  "scripts": {
+    "check-links": "markdown-link-check README.md"
   }
 }
