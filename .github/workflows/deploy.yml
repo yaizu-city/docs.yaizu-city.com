@@ -10,9 +10,21 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Link check job
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run markdown-link-check
+        run: npm run check-links
+
   # Deployment job
   deploy-s3:
-    
+    needs: check-links
     runs-on: ubuntu-latest
     # Allow write on id-token so we can use it to authenticate to AWS
     permissions:
