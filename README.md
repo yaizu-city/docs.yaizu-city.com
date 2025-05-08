@@ -106,7 +106,7 @@ myCity.on('load', () => {
 });
 ```
 
-スタイルの設定は、 `addLayer` の `paint` 設定を使います。詳しくは、 [MapLibre GL JS のドキュメンテーション](https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#circle) を確認してください。
+スタイルの設定は、 `addLayer` の `paint` 設定を使います。詳しくは、 [MapLibre GL JS のドキュメンテーション](https://maplibre.org/maplibre-style-spec/layers/#circle) を確認してください。
 
 
 ### 焼津都市情報APIのデータを取得する
